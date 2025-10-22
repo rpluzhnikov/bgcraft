@@ -1,5 +1,5 @@
 import type { Template } from '../types/index'
-import { CANVAS_WIDTH, CANVAS_HEIGHT, SAFE_ZONE_LEFT } from './constants'
+import { CANVAS_WIDTH, SAFE_ZONE_LEFT } from './constants'
 
 export const templates: Template[] = [
   {
@@ -16,7 +16,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Your Name',
         fontFamily: 'Inter, sans-serif',
@@ -29,7 +28,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Professional Title',
         fontFamily: 'Inter, sans-serif',
@@ -59,7 +57,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Full Stack Developer',
         fontFamily: 'Inter, sans-serif',
@@ -72,7 +69,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Building the future, one line at a time',
         fontFamily: 'Inter, sans-serif',
@@ -85,7 +81,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'linkedin',
         label: '/yourprofile',
@@ -116,7 +111,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'John Doe',
         fontFamily: 'Arial, sans-serif',
@@ -136,7 +130,6 @@ export const templates: Template[] = [
         },
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Chief Technology Officer',
         fontFamily: 'Arial, sans-serif',
@@ -149,7 +142,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'email',
         label: 'john.doe@company.com',
@@ -180,7 +172,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'CREATIVE DIRECTOR',
         fontFamily: 'Helvetica, sans-serif',
@@ -193,7 +184,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Design • Innovation • Strategy',
         fontFamily: 'Helvetica, sans-serif',
@@ -206,7 +196,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'qr-1',
         type: 'qr',
         url: 'https://linkedin.com/in/yourprofile',
         size: 100,
@@ -236,7 +225,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Freelance Designer',
         fontFamily: 'Inter, sans-serif',
@@ -255,7 +243,6 @@ export const templates: Template[] = [
         },
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Logo Design | Branding | UI/UX',
         fontFamily: 'Inter, sans-serif',
@@ -268,7 +255,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'website',
         label: 'www.yourportfolio.com',
@@ -299,7 +285,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'PORTFOLIO',
         fontFamily: 'Arial, sans-serif',
@@ -312,7 +297,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Scan to view my work',
         fontFamily: 'Arial, sans-serif',
@@ -325,7 +309,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'qr-1',
         type: 'qr',
         url: 'https://yourportfolio.com',
         size: 140,
@@ -355,7 +338,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Digital Marketer',
         fontFamily: 'Verdana, sans-serif',
@@ -368,7 +350,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Driving Growth Through Data',
         fontFamily: 'Verdana, sans-serif',
@@ -381,7 +362,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'linkedin',
         label: 'Connect with me',
@@ -412,7 +392,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Sarah Johnson',
         fontFamily: 'Georgia, serif',
@@ -425,7 +404,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Product Manager',
         fontFamily: 'Georgia, serif',
@@ -438,7 +416,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'email',
         label: 'sarah@example.com',
@@ -469,7 +446,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Content Creator',
         fontFamily: 'Inter, sans-serif',
@@ -482,7 +458,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Lifestyle • Travel • Photography',
         fontFamily: 'Inter, sans-serif',
@@ -495,7 +470,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'website',
         label: 'yourwebsite.com',
@@ -526,7 +500,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'UX DESIGNER',
         fontFamily: 'Helvetica, sans-serif',
@@ -546,7 +519,6 @@ export const templates: Template[] = [
         },
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Crafting delightful user experiences',
         fontFamily: 'Helvetica, sans-serif',
@@ -559,7 +531,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'linkedin',
         label: '/uxdesigner',
@@ -590,7 +561,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Business Consultant',
         fontFamily: 'Arial, sans-serif',
@@ -603,7 +573,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Strategy • Growth • Innovation',
         fontFamily: 'Arial, sans-serif',
@@ -616,7 +585,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'email',
         label: 'consult@business.com',
@@ -647,7 +615,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Brand Strategist',
         fontFamily: 'Trebuchet MS, sans-serif',
@@ -660,7 +627,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Elevating Brands to New Heights',
         fontFamily: 'Trebuchet MS, sans-serif',
@@ -673,7 +639,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'qr-1',
         type: 'qr',
         url: 'https://linkedin.com/in/brandstrategy',
         size: 110,
@@ -703,7 +668,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'Alex Morgan',
         fontFamily: 'Inter, sans-serif',
@@ -716,7 +680,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Senior Software Engineer',
         fontFamily: 'Inter, sans-serif',
@@ -729,7 +692,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'github',
         label: '/alexmorgan',
@@ -743,7 +705,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-2',
         type: 'contact',
         platform: 'linkedin',
         label: '/alex-morgan',
@@ -774,7 +735,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'CREATIVE STUDIO',
         fontFamily: 'Impact, sans-serif',
@@ -793,7 +753,6 @@ export const templates: Template[] = [
         },
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'We bring ideas to life',
         fontFamily: 'Impact, sans-serif',
@@ -806,7 +765,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'contact-1',
         type: 'contact',
         platform: 'website',
         label: 'creativestudio.com',
@@ -837,7 +795,6 @@ export const templates: Template[] = [
     },
     layers: [
       {
-        id: 'text-1',
         type: 'text',
         text: 'MINIMALIST',
         fontFamily: 'Helvetica, sans-serif',
@@ -850,7 +807,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'text-2',
         type: 'text',
         text: 'Designer',
         fontFamily: 'Helvetica, sans-serif',
@@ -863,7 +819,6 @@ export const templates: Template[] = [
         visible: true,
       },
       {
-        id: 'qr-1',
         type: 'qr',
         url: 'https://yourportfolio.com',
         size: 100,
@@ -879,7 +834,7 @@ export const templates: Template[] = [
     palette: ['#ffffff', '#000000', '#404040'],
     fonts: ['Helvetica'],
   },
-]
+] as any as Template[]
 
 // Helper to get template by id
 export const getTemplateById = (id: string): Template | undefined => {

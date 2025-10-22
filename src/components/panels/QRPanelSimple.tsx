@@ -5,7 +5,7 @@
 
 import { useCallback } from 'react';
 import { useEditorStore, selectSelectedLayer } from '../../state/editorStore';
-import { QRLayer } from '../../types';
+import { QRLayer, Layer } from '../../types';
 import { DEFAULT_SIMPLE_QR_CONFIG, type SimpleQRConfig, type SimpleQRDotShape } from '../../types/qr';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
@@ -31,7 +31,7 @@ export const QRPanelSimple = () => {
       opacity: 1,
       name: 'QR Code',
       visible: true,
-    });
+    } as Omit<Layer, 'id'>);
   }, [addLayer]);
 
   const updateConfig = useCallback((updates: Partial<SimpleQRConfig>) => {

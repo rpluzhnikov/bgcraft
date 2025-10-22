@@ -3,6 +3,7 @@ import Konva from 'konva';
 import { useEditorStore, selectProject } from '../state/editorStore';
 import { autosaveProject } from '../lib/storage';
 import { AUTOSAVE_INTERVAL } from '../state/constants';
+import type { Layer } from '../types/index';
 import { Stage } from '../components/canvas/Stage';
 import { UnifiedSidebar } from '../components/editor/UnifiedSidebar';
 import { RightSidebar } from '../components/editor/RightSidebar';
@@ -17,13 +18,11 @@ import {
   Eye,
   Save,
   Download,
-  Plus,
   Type,
   Image as ImageIcon,
   Users,
   QrCode,
 } from 'lucide-react';
-import { cn } from '../lib/utils';
 
 export const EditorNew = () => {
   const stageRef = useRef<Konva.Stage>(null);
@@ -113,7 +112,7 @@ export const EditorNew = () => {
       opacity: 1,
       name: 'Text Layer',
       visible: true,
-    });
+    } as Omit<Layer, 'id'>);
   };
 
   const handleQuickAddContact = () => {
@@ -123,28 +122,32 @@ export const EditorNew = () => {
       label: 'Connect on LinkedIn',
       style: 'solid',
       color: '#0077B5',
+      gap: 8,
+      size: 32,
       position: { x: 100, y: 200 },
       rotation: 0,
       opacity: 1,
       name: 'Contact Layer',
       visible: true,
-    });
+    } as Omit<Layer, 'id'>);
   };
 
   const handleQuickAddQR = () => {
     addLayer({
       type: 'qr',
-      url: 'https://example.com',
-      size: 120,
-      foreground: '#000000',
-      background: '#FFFFFF',
-      quietZone: 2,
+      simpleConfig: {
+        url: 'https://example.com',
+        size: 120,
+        foreColor: '#000000',
+        backColor: '#FFFFFF',
+        quietZone: 2,
+      },
       position: { x: 100, y: 100 },
       rotation: 0,
       opacity: 1,
       name: 'QR Code',
       visible: true,
-    });
+    } as Omit<Layer, 'id'>);
   };
 
   return (

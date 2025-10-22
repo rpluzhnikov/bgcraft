@@ -7,11 +7,7 @@ import { useEffect, useState } from 'react'
 import { Rect, Image as KonvaImage } from 'react-konva'
 import type { BackgroundLayer } from '../../types/index'
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from '../../state/constants'
-import { renderGradientToCanvas, renderPatternToCanvas, gradientToCSS } from '../../lib/fillGenerators'
-import {
-  DEFAULT_LINEAR_GRADIENT,
-  DEFAULT_DOTS_PATTERN
-} from '../../types/fills'
+import { renderGradientToCanvas, renderPatternToCanvas } from '../../lib/fillGenerators'
 
 interface BackgroundRendererProps {
   layer: BackgroundLayer

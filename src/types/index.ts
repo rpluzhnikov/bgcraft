@@ -106,7 +106,7 @@ export type Template = {
   name: string
   description?: string
   background: Omit<BackgroundLayer, 'id' | 'position' | 'rotation' | 'opacity'>
-  layers: Omit<Layer, 'type'>[]
+  layers: Omit<Layer, 'id'>[]
   palette?: string[]
   fonts?: string[]
 }

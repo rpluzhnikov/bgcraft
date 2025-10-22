@@ -1,7 +1,6 @@
 import { useCallback } from 'react';
 import { useEditorStore, selectLayers } from '../../state/editorStore';
 import { Layer } from '../../types';
-import { Button } from '../ui/Button';
 import {
   Eye,
   EyeOff,

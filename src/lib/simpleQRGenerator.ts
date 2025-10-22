@@ -163,7 +163,6 @@ export function generateSimpleQRSVG(config: SimpleQRConfig): {
   const quietZone = config.quietZone;
   const totalModules = moduleCount + quietZone * 2;
   const moduleSize = config.size / totalModules;
-  const qrSize = moduleCount * moduleSize;
   const offset = quietZone * moduleSize;
 
   // Caption dimensions

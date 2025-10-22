@@ -17,7 +17,6 @@ interface ContextPanelProps {
 
 export const ContextPanel = ({ activeTool, onClose, collapsed = false }: ContextPanelProps) => {
   const selectedLayer = useEditorStore(selectSelectedLayer);
-  const addLayer = useEditorStore((state) => state.addLayer);
 
   // Determine what content to show based on context
   const getContent = () => {

@@ -1,14 +1,12 @@
-import React, { useRef, useCallback, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { cn } from '../../lib/utils';
 import { Stage } from '../canvas/Stage';
 import {
   useUILayoutStore,
   selectViewOptions,
   selectZoomLevel,
-  Tool,
 } from '../../state/uiLayoutStore';
 import { useEditorStore, selectSelectedLayerId } from '../../state/editorStore';
-import { KonvaEventObject } from 'konva/lib/Node';
 import Konva from 'konva';
 
 interface CanvasWorkspaceProps {
@@ -25,75 +23,15 @@ export const CanvasWorkspace: React.FC<CanvasWorkspaceProps> = ({ className, sta
   const viewOptions = useUILayoutStore(selectViewOptions);
   const zoomLevel = useUILayoutStore(selectZoomLevel);
   const activeTool = useUILayoutStore((state) => state.activeTool);
-  const setActiveTool = useUILayoutStore((state) => state.setActiveTool);
 
   // Editor state
   const selectedId = useEditorStore(selectSelectedLayerId);
-  const selectLayer = useEditorStore((state: any) => state.selectLayer);
-  const addLayer = useEditorStore((state: any) => state.addLayer);
 
   // Canvas workspace uses full available space
   // Note: Properties panel is now a sibling element, not overlapping
 
   // Note: Canvas click handling is managed internally by the Stage component
   // Tool interactions are handled through the Properties panel
-
-  // Handle tool-specific actions
-  const handleToolAction = (tool: Tool, position: { x: number; y: number }) => {
-    switch (tool) {
-      case 'text':
-        addLayer({
-          type: 'text',
-          text: 'New Text',
-          position,
-          fontSize: 24,
-          fontFamily: 'Inter',
-          fontWeight: 400,
-          color: '#000000',
-          width: 200,
-          height: 50,
-        });
-        // Switch to select tool after adding
-        setActiveTool('select');
-        break;
-
-      case 'shapes':
-        // Add a default rectangle shape (placeholder)
-        addLayer({
-          type: 'text', // Using text as placeholder for shapes
-          text: '▢',
-          position,
-          fontSize: 48,
-          fontFamily: 'Inter',
-          fontWeight: 400,
-          color: '#000000',
-          width: 100,
-          height: 100,
-        });
-        setActiveTool('select');
-        break;
-
-      case 'qr':
-        addLayer({
-          type: 'qr',
-          position,
-          simpleConfig: {
-            url: 'https://example.com',
-            size: 150,
-            foreColor: '#000000',
-            backColor: '#ffffff',
-            quietZone: 10,
-          },
-        });
-        setActiveTool('select');
-        break;
-
-      // Other tools would open their panels in the properties section
-      // rather than directly adding to canvas
-      default:
-        break;
-    }
-  };
 
   // Keyboard shortcuts for zoom
   useEffect(() => {

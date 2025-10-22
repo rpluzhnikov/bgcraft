@@ -1,8 +1,7 @@
 import { useCallback } from 'react';
 import { useEditorStore, selectSelectedLayer } from '../../state/editorStore';
-import { TextLayer } from '../../types';
+import { TextLayer, Layer } from '../../types';
 import { Button } from '../ui/Button';
-import { Input } from '../ui/Input';
 import { ColorPicker } from '../ui/ColorPicker';
 import { Slider } from '../ui/Slider';
 import { Select } from '../ui/Select';
@@ -54,7 +53,7 @@ export const TextPanel = () => {
       visible: true,
       width: 200,
       height: 48,
-    });
+    } as Omit<Layer, 'id'>);
   }, [addLayer]);
 
   const handleTextChange = useCallback((field: string, value: string | number | boolean) => {

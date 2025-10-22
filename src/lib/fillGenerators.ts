@@ -4,13 +4,7 @@
 
 import type { AnyGradientConfig, AnyPatternConfig, GradientStop } from '../types/fills';
 import {
-  DEFAULT_LINEAR_GRADIENT,
-  DEFAULT_RADIAL_GRADIENT,
-  DEFAULT_CONIC_GRADIENT,
-  DEFAULT_DOTS_PATTERN,
-  DEFAULT_STRIPES_PATTERN,
-  DEFAULT_GRID_PATTERN,
-  DEFAULT_NOISE_PATTERN
+  DEFAULT_LINEAR_GRADIENT
 } from '../types/fills';
 import { getColorPalettes } from './colorStorage';
 

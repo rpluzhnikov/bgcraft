@@ -11,6 +11,7 @@ import {
   HelpCircle,
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
+import type { Layer } from '../../types';
 import { TopToolsToolbar } from './TopToolsToolbar';
 import { PropertiesPanel } from './PropertiesPanel';
 import { LayersDrawer } from './LayersDrawer';
@@ -25,7 +26,7 @@ import {
   selectZoomLevel,
 } from '../../state/uiLayoutStore';
 import { useEditorStore, selectProject } from '../../state/editorStore';
-import { autosaveProject, exportProjectAsJson } from '../../lib/storage';
+import { autosaveProject } from '../../lib/storage';
 import Konva from 'konva';
 
 export const ModernEditor: React.FC = () => {
@@ -159,7 +160,7 @@ export const ModernEditor: React.FC = () => {
                 opacity: 1,
                 name: 'Pasted Image',
                 visible: true,
-              });
+              } as Omit<Layer, 'id'>);
             };
             img.src = dataUrl;
           };

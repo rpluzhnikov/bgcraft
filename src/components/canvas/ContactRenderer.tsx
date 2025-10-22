@@ -3,7 +3,7 @@
  * Renders contact chip layers with platform icons and various styles
  */
 
-import { Group, Path, Text, Rect, Circle, Image as KonvaImage } from 'react-konva'
+import { Group, Text, Rect, Circle, Image as KonvaImage } from 'react-konva'
 import type { KonvaEventObject } from 'konva/lib/Node'
 import type { ContactLayer } from '../../types/index'
 import { useState, useEffect } from 'react'
@@ -32,7 +32,6 @@ interface ContactRendererProps {
 
 export function ContactRenderer({
   layer,
-  isSelected,
   onSelect,
   onDragEnd,
   onTransformEnd,

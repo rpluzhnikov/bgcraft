@@ -98,8 +98,8 @@ export function getLayerBounds(layer: Layer): {
       height = layer.height || layer.fontSize * 1.2
       break
     case 'qr':
-      width = layer.size
-      height = layer.size
+      width = layer.simpleConfig?.size || 200
+      height = layer.simpleConfig?.size || 200
       break
     case 'contact':
       width = 200 // Estimated

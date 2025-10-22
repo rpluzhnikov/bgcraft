@@ -1,8 +1,8 @@
 import { useRef, useEffect, useState } from 'react';
 import Konva from 'konva';
-import { useEditorStore, selectProject, selectSelectedLayer } from '../../state/editorStore';
+import { useEditorStore, selectProject } from '../../state/editorStore';
 import { autosaveProject } from '../../lib/storage';
-import { AUTOSAVE_INTERVAL, CANVAS_WIDTH, CANVAS_HEIGHT } from '../../state/constants';
+import { AUTOSAVE_INTERVAL } from '../../state/constants';
 import { Stage } from '../canvas/Stage';
 import { UnifiedSidebar } from './UnifiedSidebar';
 import { RightSidebar } from './RightSidebar';
@@ -23,7 +23,6 @@ import {
   Layers as LayersIcon,
   ZoomIn,
   ZoomOut,
-  RotateCcw,
 } from 'lucide-react';
 import { cn } from '../../lib/utils';
 
@@ -40,7 +39,6 @@ export const ResponsiveEditor = () => {
 
   const { isMobile, isTablet, isDesktop } = useResponsive();
   const project = useEditorStore(selectProject);
-  const selectedLayer = useEditorStore(selectSelectedLayer);
   const undo = useEditorStore((state) => state.undo);
   const redo = useEditorStore((state) => state.redo);
   const canUndo = useEditorStore((state) => state.canUndo());

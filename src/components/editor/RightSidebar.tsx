@@ -29,7 +29,7 @@ export const RightSidebar = () => {
   };
 
   const handleLayerClick = (layerId: string) => {
-    selectLayer(layerId === selectedLayerId ? null : layerId);
+    selectLayer(layerId === selectedLayerId ? undefined : layerId);
   };
 
   const handleToggleVisibility = (layer: Layer, e: React.MouseEvent) => {

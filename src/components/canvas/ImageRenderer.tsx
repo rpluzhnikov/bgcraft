@@ -19,7 +19,6 @@ interface ImageRendererProps {
 
 export function ImageRenderer({
   layer,
-  isSelected,
   onSelect,
   onDragEnd,
   onTransformEnd,

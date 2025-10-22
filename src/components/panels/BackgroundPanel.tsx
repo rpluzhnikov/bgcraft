@@ -8,7 +8,7 @@ import { ColorSwatches } from '../ui/ColorSwatches';
 import { ContrastChecker } from '../ui/ContrastChecker';
 import { Slider } from '../ui/Slider';
 import { Tabs, TabList, Tab, TabPanel } from '../ui/Tabs';
-import { Upload, Image as ImageIcon, Settings2 } from 'lucide-react';
+import { Upload, Settings2 } from 'lucide-react';
 
 const GRADIENT_PRESETS = [
   { name: 'Purple Dream', value: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' },

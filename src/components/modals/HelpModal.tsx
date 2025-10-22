@@ -1,6 +1,5 @@
 import React from 'react';
 import { X, MousePointer, Type, Image, AtSign, QrCode, Palette, FileText, Download, Undo2, ZoomIn, Grid3x3, Clipboard } from 'lucide-react';
-import { cn } from '../../lib/utils';
 
 interface HelpModalProps {
   onClose: () => void;

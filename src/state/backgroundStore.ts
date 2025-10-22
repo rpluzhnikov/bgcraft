@@ -10,14 +10,10 @@ import type {
   BackgroundType,
   GradientConfig,
   PatternConfig,
-  SolidConfig,
-  GradientStop,
-  PaletteState
+  GradientStop
 } from '../types/background';
 import {
-  DEFAULT_BACKGROUND_STATE,
-  DEFAULT_GRADIENT,
-  DEFAULT_PATTERN
+  DEFAULT_BACKGROUND_STATE
 } from '../types/background';
 import { generateRandomGradient } from '../lib/fillGenerators';
 import { addRecentColor, getSavedSwatches, getColorPalettes } from '../lib/colorStorage';
@@ -155,7 +151,7 @@ export const useBackgroundStore = create<BackgroundStore>()(
       // Convert to unified format
       const unifiedConfig: GradientConfig = {
         kind: randomConfig.type as GradientConfig['kind'],
-        angle: randomConfig.angle || 0,
+        angle: ('angle' in randomConfig) ? randomConfig.angle : 0,
         center: { x: 0.5, y: 0.5 },
         shape: 'circle',
         repeat: false,

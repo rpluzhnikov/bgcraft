@@ -155,7 +155,9 @@ describe('fillGenerators', () => {
       const gradient2 = generateRandomGradient(seed);
 
       expect(gradient1.type).toBe(gradient2.type);
-      expect(gradient1.angle).toBe(gradient2.angle);
+      if (gradient1.type === 'linear') {
+        expect(gradient1.angle).toBe((gradient2 as any).angle);
+      }
       expect(gradient1.stops).toEqual(gradient2.stops);
     });
 
@@ -164,9 +166,12 @@ describe('fillGenerators', () => {
       const gradient2 = generateRandomGradient(200);
 
       // Should be different (though there's a tiny chance they could be the same)
+      const anglesDifferent = (gradient1.type === 'linear' && gradient2.type === 'linear')
+        ? (gradient1 as any).angle !== (gradient2 as any).angle
+        : false;
       const isDifferent =
         gradient1.type !== gradient2.type ||
-        gradient1.angle !== gradient2.angle ||
+        anglesDifferent ||
         gradient1.stops.length !== gradient2.stops.length;
 
       expect(isDifferent).toBe(true);
@@ -214,9 +219,9 @@ describe('fillGenerators', () => {
     it('should generate valid angles (0-359)', () => {
       for (let i = 0; i < 10; i++) {
         const gradient = generateRandomGradient(i * 777);
-        if (gradient.type === 'linear' || gradient.type === 'conic') {
-          expect(gradient.angle).toBeGreaterThanOrEqual(0);
-          expect(gradient.angle).toBeLessThan(360);
+        if (gradient.type === 'linear') {
+          expect((gradient as any).angle).toBeGreaterThanOrEqual(0);
+          expect((gradient as any).angle).toBeLessThan(360);
         }
       }
     });

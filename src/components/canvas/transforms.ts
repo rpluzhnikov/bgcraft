@@ -111,8 +111,21 @@ export function handleTransformEnd(
     // Update the simpleConfig.size
     updateLayer(layer.id, {
       simpleConfig: {
-        ...layer.simpleConfig,
+        data: layer.simpleConfig?.data || '',
         size: newSize,
+        dotShape: layer.simpleConfig?.dotShape || 'rounded',
+        dotColor: layer.simpleConfig?.dotColor || '#000000',
+        backgroundColor: layer.simpleConfig?.backgroundColor || '#FFFFFF',
+        caption: layer.simpleConfig?.caption || {
+          enabled: false,
+          text: 'Scan me',
+          fontSize: 16,
+          color: '#000000',
+          fontWeight: 'bold' as const,
+        },
+        errorCorrection: layer.simpleConfig?.errorCorrection || 'M',
+        quietZone: layer.simpleConfig?.quietZone || 4,
+        cornerRadius: layer.simpleConfig?.cornerRadius || 0.4,
       },
       rotation,
       position: {

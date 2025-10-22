@@ -9,7 +9,7 @@ import {
   validateBackgroundState
 } from '../backgroundMigration';
 import type { BackgroundLayer } from '../../types';
-import type { BackgroundState, GradientConfig } from '../../types/background';
+import type { BackgroundState } from '../../types/background';
 import { DEFAULT_BACKGROUND_STATE } from '../../types/background';
 
 describe('backgroundMigration', () => {
@@ -118,8 +118,7 @@ describe('backgroundMigration', () => {
         solid: { color: '#00FF00' }
       };
 
-      const existingLayer = {} as BackgroundLayer;
-      const result = backgroundStateToLayer(state, existingLayer);
+      const result = backgroundStateToLayer(state);
 
       expect(result.mode).toBe('solid');
       expect(result.value).toBe('#00FF00');
@@ -143,14 +142,15 @@ describe('backgroundMigration', () => {
         }
       };
 
-      const existingLayer = {} as BackgroundLayer;
-      const result = backgroundStateToLayer(state, existingLayer);
+      const result = backgroundStateToLayer(state);
 
       expect(result.mode).toBe('gradient');
       expect(result.gradientConfig).toBeDefined();
       expect(result.gradientConfig?.type).toBe('radial');
-      expect(result.gradientConfig?.focalPosition.x).toBe(30);
-      expect(result.gradientConfig?.focalPosition.y).toBe(70);
+      if (result.gradientConfig?.type === 'radial') {
+        expect(result.gradientConfig?.focalPosition.x).toBe(30);
+        expect(result.gradientConfig?.focalPosition.y).toBe(70);
+      }
     });
   });
 

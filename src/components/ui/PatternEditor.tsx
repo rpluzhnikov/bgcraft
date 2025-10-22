@@ -102,7 +102,6 @@ export const PatternEditor: React.FC<PatternEditorProps> = ({
         // Generate noise pattern
         for (let i = 0; i < data.length; i += 4) {
           const noise = Math.random() * intensity / 100;
-          const value = noise * 255;
 
           // Mix with base colors
           const fgRgb = hexToRgb(config.foreground);

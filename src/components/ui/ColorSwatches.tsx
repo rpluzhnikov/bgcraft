@@ -95,7 +95,7 @@ export const ColorSwatches: React.FC<ColorSwatchesProps> = ({
   // Generate palette from current color
   const handleGeneratePalette = useCallback(() => {
     const colors = generatePalette(currentColor, selectedPaletteType);
-    const palette = addColorPalette({
+    addColorPalette({
       name: `${selectedPaletteType} from ${currentColor}`,
       colors,
       type: selectedPaletteType,

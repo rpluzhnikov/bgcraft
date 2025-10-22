@@ -30,7 +30,7 @@ export const UnifiedSidebar = ({ className }: UnifiedSidebarProps) => {
 
     // Clear selection when switching to a creation tool
     if (toolId !== 'select' && toolId !== 'background' && toolId !== 'template') {
-      selectLayer(null);
+      selectLayer(undefined);
     }
   };
 

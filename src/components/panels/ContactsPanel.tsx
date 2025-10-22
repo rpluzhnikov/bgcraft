@@ -1,11 +1,10 @@
 import { useCallback, useRef, ChangeEvent } from 'react';
 import { useEditorStore, selectSelectedLayer } from '../../state/editorStore';
-import { ContactLayer } from '../../types';
+import { ContactLayer, Layer } from '../../types';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { ColorPicker } from '../ui/ColorPicker';
 import { Slider } from '../ui/Slider';
-import { Select } from '../ui/Select';
 import { UserPlus, Github, Send, Mail, Globe, Phone, Link, Upload } from 'lucide-react';
 
 const PLATFORMS = [
@@ -45,7 +44,7 @@ export const ContactsPanel = () => {
       opacity: 1,
       name: 'Contact Chip',
       visible: true,
-    });
+    } as Omit<Layer, 'id'>);
   }, [addLayer]);
 
   const handleFieldChange = useCallback((field: string, value: string | number) => {

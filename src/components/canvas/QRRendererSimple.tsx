@@ -21,7 +21,6 @@ interface QRRendererSimpleProps {
 
 export function QRRendererSimple({
   layer,
-  isSelected,
   onSelect,
   onDragEnd,
   onTransformEnd,

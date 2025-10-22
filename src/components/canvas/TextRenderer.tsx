@@ -21,7 +21,6 @@ interface TextRendererProps {
 
 export function TextRenderer({
   layer,
-  isSelected,
   onSelect,
   onDragEnd,
   onTransformEnd,

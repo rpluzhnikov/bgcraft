@@ -1,6 +1,6 @@
 import { useCallback, useRef, ChangeEvent } from 'react';
 import { useEditorStore, selectSelectedLayer } from '../../state/editorStore';
-import { ImageLayer } from '../../types';
+import { ImageLayer, Layer } from '../../types';
 import { Button } from '../ui/Button';
 import { Input } from '../ui/Input';
 import { Slider } from '../ui/Slider';
@@ -32,46 +32,35 @@ export const ImagePanel = () => {
       // Get natural image dimensions
       const img = new Image();
       img.onload = () => {
-        addLayer({
-          type: 'image',
-          src: dataUrl,
-          naturalSize: { w: img.width, h: img.height },
-          objectFit: 'contain',
-          width: 200,
-          height: 200,
-          position: { x: 100, y: 100 },
-          rotation: 0,
-          opacity: 1,
-          name: 'Image',
-          visible: true,
-          locked: false,
-        });
+        if (imageLayer) {
+          // Replace existing image
+          updateLayer(imageLayer.id, {
+            src: dataUrl,
+            naturalSize: { w: img.width, h: img.height },
+          });
+        } else {
+          // Add new image layer
+          addLayer({
+            type: 'image',
+            src: dataUrl,
+            naturalSize: { w: img.width, h: img.height },
+            objectFit: 'contain',
+            width: 200,
+            height: 200,
+            position: { x: 100, y: 100 },
+            rotation: 0,
+            opacity: 1,
+            name: 'Image',
+            visible: true,
+            locked: false,
+          } as Omit<Layer, 'id'>);
+        }
       };
       img.src = dataUrl;
     };
     reader.readAsDataURL(file);
-  }, [addLayer]);
+  }, [addLayer, imageLayer, updateLayer]);
 
-  const handleReplaceImage = useCallback((e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !imageLayer) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const dataUrl = event.target?.result as string;
-
-      // Get natural image dimensions
-      const img = new Image();
-      img.onload = () => {
-        updateLayer(imageLayer.id, {
-          src: dataUrl,
-          naturalSize: { w: img.width, h: img.height },
-        });
-      };
-      img.src = dataUrl;
-    };
-    reader.readAsDataURL(file);
-  }, [imageLayer, updateLayer]);
 
   const handleFieldChange = useCallback((field: string, value: string | number | boolean) => {
     if (!imageLayer) return;

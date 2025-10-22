@@ -267,7 +267,7 @@ export function generatePalette(baseColor: string, type: 'monochrome' | 'complem
  * Calculate average luminance of a canvas/image
  * Note: This is a placeholder - actual implementation would need canvas context
  */
-export function getAverageLuminance(canvasData?: ImageData): number {
+export function getAverageLuminance(): number {
   // For now, return a default mid-tone value
   // In production, this would analyze the actual canvas pixels
   return 0.5;

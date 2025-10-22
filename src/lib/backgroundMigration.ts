@@ -13,7 +13,6 @@ import type {
 } from '../types/background';
 import {
   DEFAULT_BACKGROUND_STATE,
-  DEFAULT_SOLID,
   DEFAULT_GRADIENT,
   DEFAULT_PATTERN
 } from '../types/background';
@@ -225,8 +224,7 @@ function parseColorStops(stopsString: string): GradientStop[] {
  * Convert BackgroundState back to BackgroundLayer for compatibility
  */
 export function backgroundStateToLayer(
-  state: BackgroundState,
-  existingLayer: BackgroundLayer
+  state: BackgroundState
 ): Partial<BackgroundLayer> {
   const updates: Partial<BackgroundLayer> = {};
 

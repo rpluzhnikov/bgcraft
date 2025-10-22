@@ -31,7 +31,7 @@ export const BackgroundPanelEnhanced = () => {
   } = useFillConfigurations();
 
   // UI state
-  const [gradientType, setGradientType] = useState<'linear' | 'radial'>('linear');
+  const [gradientType, setGradientType] = useState<'linear' | 'radial' | 'conic'>('linear');
   const [showPresets, setShowPresets] = useState(false);
   const [randomSeed, setRandomSeed] = useState(Date.now());
 
@@ -48,13 +48,13 @@ export const BackgroundPanelEnhanced = () => {
 
       // Update the layer with the migrated gradientConfig
       updateLayer(backgroundLayer.id, {
-        gradientConfig: migratedState.gradientConfig,
+        gradientConfig: migratedState.gradient as any,
       });
 
       // Update the configurations to match
-      if (migratedState.gradientConfig) {
-        updateGradientConfig(migratedState.gradientConfig);
-        setGradientType(migratedState.gradientConfig.type);
+      if (migratedState.gradient) {
+        updateGradientConfig(migratedState.gradient as any);
+        setGradientType(migratedState.gradient.kind === 'linear' ? 'linear' : 'radial');
       }
     }
   }, [backgroundLayer?.id]); // Only run when background layer changes
