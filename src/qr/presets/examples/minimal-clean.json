@@ -1,0 +1,16 @@
+{
+  "name": "Minimal Clean",
+  "description": "Simple QR without decorations for clean designs",
+  "config": {
+    "data": "https://portfolio.example.com",
+    "size": 256,
+    "quietZone": 4,
+    "errorCorrectionLevel": "M",
+    "moduleShape": "square",
+    "foregroundColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "preset": {
+      "type": "none"
+    }
+  }
+}

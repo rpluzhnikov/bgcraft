@@ -1,0 +1,18 @@
+{
+  "name": "Event Ticket",
+  "description": "Ticket-style QR for event invitations and passes",
+  "config": {
+    "data": "https://event.example.com/ticket/ABC123",
+    "size": 280,
+    "quietZone": 4,
+    "errorCorrectionLevel": "H",
+    "moduleShape": "square",
+    "foregroundColor": "#1F2937",
+    "backgroundColor": "#F9FAFB",
+    "preset": {
+      "type": "ticket",
+      "notchSize": 16
+    },
+    "padding": 20
+  }
+}

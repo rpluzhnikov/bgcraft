@@ -1,0 +1,19 @@
+{
+  "name": "Chat Bubble",
+  "description": "Speech bubble style for messaging apps and chat interfaces",
+  "config": {
+    "data": "https://wa.me/1234567890",
+    "size": 250,
+    "quietZone": 4,
+    "errorCorrectionLevel": "H",
+    "moduleShape": "rounded",
+    "moduleRadius": 0.4,
+    "foregroundColor": "#25D366",
+    "backgroundColor": "#FFFFFF",
+    "preset": {
+      "type": "speech",
+      "tailSide": "bottom"
+    },
+    "padding": 20
+  }
+}

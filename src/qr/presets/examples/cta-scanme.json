@@ -1,0 +1,21 @@
+{
+  "name": "Scan Me CTA",
+  "description": "Eye-catching QR with call-to-action button for marketing materials",
+  "config": {
+    "data": "https://promo.example.com/special-offer",
+    "size": 280,
+    "quietZone": 4,
+    "errorCorrectionLevel": "H",
+    "moduleShape": "square",
+    "foregroundColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "preset": {
+      "type": "cta",
+      "label": "SCAN FOR 20% OFF",
+      "font": "system-ui, -apple-system, sans-serif",
+      "fontSize": 20,
+      "weight": 700
+    },
+    "padding": 24
+  }
+}

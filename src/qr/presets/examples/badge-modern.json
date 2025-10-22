@@ -1,0 +1,20 @@
+{
+  "name": "Modern Badge",
+  "description": "Professional badge with subtle shadow for business cards",
+  "config": {
+    "data": "https://linkedin.com/in/yourprofile",
+    "size": 300,
+    "quietZone": 4,
+    "errorCorrectionLevel": "H",
+    "moduleShape": "rounded",
+    "moduleRadius": 0.35,
+    "foregroundColor": "#0A66C2",
+    "backgroundColor": "#FFFFFF",
+    "preset": {
+      "type": "badge",
+      "radius": 20,
+      "shadow": true
+    },
+    "padding": 24
+  }
+}

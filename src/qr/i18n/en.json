@@ -1,0 +1,83 @@
+{
+  "validation": {
+    "errors": {
+      "QUIET_ZONE_TOO_SMALL": {
+        "title": "Quiet Zone Too Small",
+        "message": "Quiet zone must be at least {minValue} modules for proper scanning. Current value is {value} modules.",
+        "suggestion": "Set quiet zone to {minValue} or higher"
+      },
+      "INSUFFICIENT_CONTRAST": {
+        "title": "Insufficient Color Contrast",
+        "message": "Color contrast ratio of {ratio}:1 is below minimum of {minValue}:1. QR code may not scan properly.",
+        "suggestion": "Increase contrast between foreground and background colors"
+      },
+      "LOGO_TOO_LARGE": {
+        "title": "Logo Too Large",
+        "message": "Logo size of {value}% exceeds maximum of {maxValue}% of QR code area. This blocks too much of the scannable data.",
+        "suggestion": "Reduce logo size to {maxValue}% or less"
+      },
+      "DATA_TOO_LONG": {
+        "title": "Data Too Long",
+        "message": "Data length of {value} characters exceeds capacity of {maxValue} for error correction level {ecc}.",
+        "suggestion": "Reduce data length or use lower error correction level"
+      }
+    },
+    "warnings": {
+      "LOW_CONTRAST": {
+        "title": "Low Color Contrast",
+        "message": "Color contrast ratio of {ratio}:1 is below recommended {minValue}:1. Scanning reliability may be reduced.",
+        "suggestion": "Consider increasing contrast for optimal scanning reliability"
+      },
+      "LOGO_SIZE_HIGH": {
+        "title": "Logo Size Above Recommended",
+        "message": "Logo size of {value}% is above recommended {maxValue}%. This may affect scanning reliability.",
+        "suggestion": "Consider reducing logo size for better scanning"
+      },
+      "LOGO_WITHOUT_HIGH_ECC": {
+        "title": "Logo Without High Error Correction",
+        "message": "Using logo without highest error correction level (H). Current level is {ecc}.",
+        "suggestion": "Use error correction level H when adding logos for better reliability"
+      },
+      "SIZE_TOO_SMALL": {
+        "title": "QR Code Size Too Small",
+        "message": "QR code size of {value}px is below minimum {minValue}px for reliable screen scanning.",
+        "suggestion": "Increase size to at least {minValue}px"
+      },
+      "SIZE_BELOW_RECOMMENDED": {
+        "title": "Size Below Recommended",
+        "message": "QR code size of {value}px is below recommended {minValue}px.",
+        "suggestion": "Consider using {minValue}px or larger for optimal scanning"
+      },
+      "DATA_NEAR_CAPACITY": {
+        "title": "Data Near Capacity",
+        "message": "Data length of {value} characters is near capacity limit of {maxValue} for error correction level {ecc}.",
+        "suggestion": "Consider reducing data for better reliability"
+      },
+      "MODULE_RADIUS_HIGH": {
+        "title": "Module Radius Too High",
+        "message": "Module radius of {value} may reduce scanning reliability. Highly rounded modules can be harder to scan.",
+        "suggestion": "Use module radius of 0.4 or less for better scanning"
+      },
+      "INNER_GAP_TOO_LARGE": {
+        "title": "Inner Gap Too Large",
+        "message": "Inner gap of {value} may affect scanning. Large gaps separate modules too much.",
+        "suggestion": "Keep inner gap below 0.1 for reliable scanning"
+      }
+    },
+    "summary": {
+      "valid": "QR code configuration is valid",
+      "issues": "Found {errorCount} {errorLabel} and {warningCount} {warningLabel}",
+      "errorOnly": "Found {errorCount} {errorLabel}",
+      "warningOnly": "Found {warningCount} {warningLabel}",
+      "error": "error",
+      "errors": "errors",
+      "warning": "warning",
+      "warnings": "warnings"
+    },
+    "export": {
+      "blocked": "Cannot export QR code with critical errors",
+      "blockedDetails": "Fix the following errors before exporting:",
+      "allowed": "QR code is safe to export"
+    }
+  }
+}
