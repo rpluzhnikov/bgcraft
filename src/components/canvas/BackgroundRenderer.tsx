@@ -215,7 +215,9 @@ function parseAndApplyGradient(
   const gradient = ctx.createLinearGradient(x0, y0, x1, y1)
 
   colorStops.forEach((stop) => {
-    gradient.addColorStop(stop.offset, stop.color)
+    // Ensure offset is finite and within valid range [0, 1]
+    const validOffset = Math.max(0, Math.min(1, isFinite(stop.offset) ? stop.offset : 0))
+    gradient.addColorStop(validOffset, stop.color)
   })
 
   ctx.fillStyle = gradient

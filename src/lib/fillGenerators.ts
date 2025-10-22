@@ -96,9 +96,12 @@ export function renderGradientToCanvas(
       gradient = ctx.createLinearGradient(0, 0, width, 0);
   }
 
-  // Add color stops
+  // Add color stops with validation
   sortedStops.forEach(stop => {
-    gradient.addColorStop(stop.position / 100, stop.color);
+    const position = stop.position / 100;
+    // Ensure position is finite and within valid range [0, 1]
+    const validPosition = Math.max(0, Math.min(1, isFinite(position) ? position : 0));
+    gradient.addColorStop(validPosition, stop.color);
   });
 
   // Apply dithering if enabled (for linear gradients)
@@ -139,7 +142,7 @@ function renderConicGradient(
       if (position >= sortedStops[j].position && position <= sortedStops[j + 1].position) {
         // Interpolate between stops
         const range = sortedStops[j + 1].position - sortedStops[j].position;
-        const factor = (position - sortedStops[j].position) / range;
+        const factor = range > 0 ? (position - sortedStops[j].position) / range : 0;
         color = interpolateColors(sortedStops[j].color, sortedStops[j + 1].color, factor);
         break;
       }
